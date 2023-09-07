@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.SAROSE.StepQuest">
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+    <uses-sdk android:targetSdkVersion="26"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="ExtraText">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCUhUdAZeJBq6DySgjEWF4gcbkXG5xRfnY" />
+
+        <activity android:name=".ui.ActivityMain"></activity>
+        <activity android:name=".ui.LogSign"></activity>
+        <activity android:name=".ui.Welcome"></activity>
+        <activity android:name=".ui.GenderSelection"/>
+
+        <!--  Startup UI   -->
+        <activity
+            android:name=".ui.SplashScreen"
+            android:theme="@style/FullScreenTheme"
+            android:launchMode="singleInstance"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <service android:name=".Components.SensorListener" />
+
+        <receiver android:name=".Widget.Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+        </receiver>
+
+        <service
+            android:name=".Widget.WidgetUpdateService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+
+    </application>
+
+</manifest>
