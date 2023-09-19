@@ -12,3 +12,18 @@
     <li>Live Location Tracking</li>
     <li>Backup Achievements</li>
 </ul>
+
+<p>Requirment to run the application</p>
+<ul>
+   <li>Android Studio</li>
+   <li>JDK</li>
+</ul>
+
+<p>Follow the steps to run the application</p>
+<ul>
+   <li>Clone the repositorie</li>
+   <li>Open the project folder in android studio</li>
+   <li>Go to the Gradle script (Local Properties)</li>
+   <li>Change the username of yours</li>
+   <li>Run the project</li>
+</ul>
